@@ -1,0 +1,472 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+
+
+body {
+   background-color: rgb(12, 12, 12);
+ 
+}
+
+.center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    max-width: 350px;
+    max-height: 390px;
+}
+
+.screenBox {
+    position: relative;
+    width: 300px;
+    height: 270px;
+    background-color: black;
+    border-radius: 5%;
+    left: 25px;
+}
+
+p {
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    color: white;
+    font-family: 'VT323';
+}
+
+.behind {
+    position: absolute;
+    width: 316px;
+    height: 200px;
+    top: 10px;
+    left: 16.5px;
+    background-color: #3c3931;
+    border-radius: 5% / 75%;
+}
+
+.frame {
+    position: absolute;
+    width: 284px;
+    height: 254px;
+    background-color: black;
+    left: 6px;
+    top: 6px;
+    border: 2px #888888 solid;
+    border-radius: 1%;
+}
+
+.screenBox2 {
+    position: absolute;
+    width: 100%;
+    height: 214px;
+    background-color: black;
+    border-bottom: 2px #888888 solid;
+}
+
+.screenBox3 {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 268px;
+    height: 198px;
+    background-color: darkgrey;
+    border-radius: 25% / 2%;
+    
+}
+
+.screenEffect {
+    background: repeating-linear-gradient(
+      to bottom,
+      #171717,
+      #171717 1px,
+      #121212 1px,
+      #121212 2px
+    );
+}
+
+.screen {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 256px;
+    height: 186px;
+    background-color: #171717;
+    border-radius: 10% / 10%;
+    box-shadow: inset 0px 10px 6px 0px #111111;
+    cursor: text;
+    box-shadow:
+        0 0 175px 40px rgba(255, 255, 255, 0.359),  /* inner white */
+        0 0 20px 40px rgba(159, 30, 159, 0.338), /* middle magenta */
+        0 0 20px 48px rgba(50, 184, 182, 0.304),
+        0 0 20px 5px rgba(0, 255, 229, 0.591); /* outer cyan */
+
+}
+
+.bottomFrame {
+    position: absolute;
+    background-color: darkgrey;
+    width: 100%;
+    height: 32px;
+    bottom: 0px;
+    border-top: 2px #888888 solid;
+}
+
+.fan {
+    position: absolute;
+    background: repeating-linear-gradient(
+      to right,
+      grey,
+      white 3px,
+      #333333 3px,
+      #333333 6px
+    );
+    width: 72px;
+    height: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 120px;
+    width: 60px;
+}
+
+.screenBox .powerButton {
+    position: absolute;
+    top: 5px;
+    left: 250px;
+    width: 20px;
+    height: 20px;
+    background-color: #999999;
+    border: 1px #7a7a7a solid;
+    cursor: pointer;
+}
+
+.powerIcon {
+    position: absolute;
+    border: 1px #555555 solid;
+    top: 4.5px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(64, 255, 0);
+    animation: glowing 1500ms 2s;
+}
+
+@keyframes glowing {
+    0% { background-color: #ff0202; box-shadow: 0 0 5px #2ba805; }
+    50% { background-color: #49e819; box-shadow: 0 0 55px 10px#49e819; }
+    100% { background-color: #2ba805; box-shadow: 0 0 5px #2ba805; }
+    }
+
+.screenBox .powerLight {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 13px;
+    left: 230px;
+    border-radius: 50%;
+}
+
+.lightOn {
+    background-color: $powerOn;
+    -webkit-box-shadow: 0px 1px 5px 0px $powerOn;
+}
+
+.lightOff {
+    background-color: $powerOff;
+    -webkit-box-shadow: 0px 1px 5px 0px $powerOff;
+}
+
+.screenFoot {
+    position: relative;
+    width: 275px;
+    height: 15px;
+    left: 37px;
+    background-color: darkgrey;
+    -webkit-box-shadow: inset 0px 10px 6px 0px #222222;
+}
+
+.computer {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.computerFrame {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 334px;
+    height: 64px;
+    border: 2px grey solid;
+    border-radius: 12px;
+    box-shadow:
+        0  40px 50px 20px rgb(2, 2, 2),
+        0  65px 45px 20px rgba(71, 36, 83, 0.516),
+        0 -15px 50px 5px rgba(135, 124, 204, 0.502);
+}
+
+.computerFan1, .computerFan2 {
+    position: absolute;
+    background: repeating-linear-gradient(
+      to right,
+      grey,
+      white 3px,
+      #333333 3px,
+      #333333 6px
+    );
+    height: 21.5px;
+    width: 80px;
+    top: 7px;
+    left: 5px;
+}
+
+.computerFan2 {
+    top: 35.5px;
+}
+
+div[class^='screw'] {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #222222;
+    border-radius: 50%;
+}
+
+.screw1 {
+    left: 95px;
+    top: 12px;
+}
+
+.screw2 {
+    left: 95px;
+    top: 42px;
+}
+
+.computerFrame2 {
+    position: absolute;
+    width: 130px;
+    height: 46px;
+    background-color: #999999;
+    border: 2px #888888 solid;
+    left: 115px;
+    top: 7px;
+    border-radius: 3px;
+}
+
+.floppy {
+    position: absolute;
+    width: 124px;
+    height: 25px;
+    left: 3px;
+    top: 3px;
+    background-color: #222222;
+}
+
+.fingerGrip {
+    position: absolute;
+    width: 30px;
+    height: 23px;
+    background-color: grey;
+    top: 1px;
+    left: 47px;
+    border-radius: 3px;
+}
+
+.slot {
+    position: absolute;
+    width: 95%;
+    height: 5px;
+    left: 2.5%;
+    top: 9px;
+    border-radius: 3px;
+    background-color: black;
+}
+
+div[class^='socket'] {
+    position: absolute;
+    width: 60.5px;
+    height: 12px;
+    background-color: black;
+}
+
+.socket1 {    
+    top: 31px;
+    left: 3px;
+}
+
+.socket2 {    
+    top: 31px;
+    left: 66.5px;
+}
+
+.screw3 {
+    left: 265px;
+    top: 12px;
+    animation: glowing2 400ms infinite;
+    animation-delay: -2s;
+}
+
+@keyframes glowing2 {
+    0% { background-color: #204e11; box-shadow: 0 0 5px #2ba805; }
+    50% { background-color: #49e819; box-shadow: 0 0 20px 5px#49e819; }
+    100% { background-color: #2ba805; box-shadow: 0 0 5px #2ba805; }
+    }
+
+.screw4 {
+    left: 288px;
+    top: 12px;
+    animation: glowing3 350ms infinite;
+}
+
+@keyframes glowing3 {
+    0% { background-color: #11204e; box-shadow: 0 0 5px #2ba805; }
+    50% { background-color: #197de8; box-shadow: 0 0 20px 5px#49e819; }
+    100% { background-color: #0539a8; box-shadow: 0 0 5px #2ba805; }
+    }
+
+.screw5 {
+    left: 313px;
+    top: 12px;
+    animation: glowing4 300ms infinite;
+}
+
+@keyframes glowing4 {
+    0% { background-color: #3c114e; box-shadow: 0 0 5px #2ba805; }
+    50% { background-color: #c619e8; box-shadow: 0 0 20px 5px#49e819; }
+    100% { background-color: #a80587; box-shadow: 0 0 5px #2ba805; }
+    }
+
+.computer .powerButton {
+    position: absolute;
+    width: 35px;
+    height: 26px;
+    left: 265px;
+    background-color: #333333;
+    top: 30px;
+}
+
+.buttonSlide {
+    position: absolute;
+    width: 90%;
+    height: 12px;
+    left: 5%;
+    top: 2px;
+    background-color: #111111;
+    border-radius: 1px;
+}
+
+.computerButton {
+    position: absolute;
+    width: 45%;
+    height: 8px;
+    top: 2px;
+    background-color: $powerOff;
+    cursor: pointer;
+}
+
+.computerButtonOff {
+    left: 8%;
+}
+
+.computerButtonOn {
+    left: 48%;
+}
+
+.offIndicator {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: 16px;
+    left: 5px;
+    border-radius: 50%;
+    border: 1px white solid;
+}
+
+.onIndicator {
+    position: absolute;
+    width: 0px;
+    height: 6px;
+    top: 16px;
+    left: 28px;
+    border-right: 1px white solid;
+}
+
+.computer .powerLight {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    left: 315px;
+    top: 38px;
+}
+
+.output {
+    position: absolute;
+    width: 95%;
+    height: 80%;
+    top: 20px;
+    left: 10px;
+    color: #33ff66;
+    font-size: 10px;
+    display: none;
+    font-family: 'VT323';
+    overflow: auto;
+}
+
+@keyframes popup {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+}
+
+.popup {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    border: 1px #33ff66 solid;
+    border-top: 5px #33ff66 solid;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    display: block;
+    animation-name: popup;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+::-webkit-scrollbar { 
+  display: none;
+}
+
+.terminalInput {
+    background: none;
+    outline: none;
+    border: none;
+    height: 10px;
+    font-family: 'VT323';
+    color: #33ff66;
+    width: 60%;
+}
+
+.glow {  
+    margin-top: 150px;
+    margin-left: 675px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow:
+        0 0 125px 60px #fff,  /* inner white */
+        0 0 175px 90px #f0f, /* middle magenta */
+        0 0 600px 100px #0ff; /* outer cyan */
+}
