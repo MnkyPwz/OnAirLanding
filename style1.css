@@ -3,7 +3,7 @@
 
 
 body {
-   background-color: rgb(12, 12, 12);
+   background-color: rgb(0, 0, 0);
  
 }
 
@@ -43,6 +43,7 @@ p {
     left: 16.5px;
     background-color: #3c3931;
     border-radius: 5% / 75%;
+    box-shadow:0 300px 1200px 10px rgba(63, 0, 254, 0.475);
 }
 
 .frame {
@@ -70,8 +71,9 @@ p {
     top: 8px;
     width: 268px;
     height: 198px;
-    background-color: darkgrey;
-    border-radius: 25% / 2%;
+    background-color: rgb(32, 31, 31);
+    border-radius: 25% / 5%;
+    box-shadow: inset 0 0 30px 0px rgb(0, 0, 0);
     
 }
 
@@ -96,20 +98,22 @@ p {
     box-shadow: inset 0px 10px 6px 0px #111111;
     cursor: text;
     box-shadow:
-        0 0 175px 40px rgba(255, 255, 255, 0.359),  /* inner white */
-        0 0 20px 40px rgba(159, 30, 159, 0.338), /* middle magenta */
-        0 0 20px 48px rgba(50, 184, 182, 0.304),
-        0 0 20px 5px rgba(0, 255, 229, 0.591); /* outer cyan */
+        0 25px 175px 10px rgba(216, 214, 214, 0.119),  /* inner white */
+       0 0 25px 15px rgba(159, 30, 159, 0.338), /* middle magenta */
+        0 -10px 50px 5px rgba(219, 226, 89, 0.407), 
+        0 80px 1000px 50px rgba(47, 84, 94, 0.681),
+        0 0 30px 3px rgb(33, 180, 213); /* outer cyan */
 
 }
 
 .bottomFrame {
     position: absolute;
-    background-color: darkgrey;
+    background-color: rgba(89, 73, 92, 0.856);
     width: 100%;
     height: 32px;
     bottom: 0px;
     border-top: 2px #888888 solid;
+    box-shadow: inset 0 0 5px 3px rgb(37, 39, 39); 
 }
 
 .fan {
@@ -138,7 +142,7 @@ p {
     left: 250px;
     width: 20px;
     height: 20px;
-    background-color: #999999;
+    background-color: #4d4949;
     border: 1px #7a7a7a solid;
     cursor: pointer;
 }
@@ -146,7 +150,7 @@ p {
 .powerIcon {
     position: absolute;
     border: 1px #555555 solid;
-    top: 4.5px;
+    top: 5px;
     left: 4px;
     width: 8px;
     height: 8px;
@@ -171,13 +175,12 @@ p {
 }
 
 .lightOn {
-    background-color: $powerOn;
-    -webkit-box-shadow: 0px 1px 5px 0px $powerOn;
+ 
+    box-shadow: 0px 1px 5px 0px;
 }
 
 .lightOff {
-    background-color: $powerOff;
-    -webkit-box-shadow: 0px 1px 5px 0px $powerOff;
+   box-shadow: 0px 1px 5px 0px;
 }
 
 .screenFoot {
@@ -186,7 +189,7 @@ p {
     height: 15px;
     left: 37px;
     background-color: darkgrey;
-    -webkit-box-shadow: inset 0px 10px 6px 0px #222222;
+   box-shadow: inset 0px 10px 6px 0px #222222;
 }
 
 .computer {
@@ -207,8 +210,9 @@ p {
     border-radius: 12px;
     box-shadow:
         0  40px 50px 20px rgb(2, 2, 2),
-        0  65px 45px 20px rgba(71, 36, 83, 0.516),
-        0 -15px 50px 5px rgba(135, 124, 204, 0.502);
+        0  65px 45px 20px rgba(70, 33, 67, 0.516),
+        0  75px 1000px 50px rgba(46, 36, 49, 0.516),
+        0 -15px 50px 5px rgba(17, 8, 74, 0.502);
 }
 
 .computerFan1, .computerFan2 {
@@ -347,7 +351,7 @@ div[class^='socket'] {
     width: 35px;
     height: 26px;
     left: 265px;
-    background-color: #333333;
+    background-color: #242121;
     top: 30px;
 }
 
@@ -367,7 +371,6 @@ div[class^='socket'] {
     width: 45%;
     height: 8px;
     top: 2px;
-    background-color: $powerOff;
     cursor: pointer;
 }
 
@@ -437,7 +440,6 @@ div[class^='socket'] {
     border: 1px #33ff66 solid;
     border-top: 5px #33ff66 solid;
     text-align: center;
-    vertical-align: middle;
     line-height: 30px;
     display: block;
     animation-name: popup;
