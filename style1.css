@@ -353,12 +353,13 @@ div[class^='socket'] {
 
 .buttonSlide {
     position: absolute;
-    width: 90%;
-    height: 12px;
+    width: 88%;
+    height: 11px;
     left: 5%;
     top: 2px;
-    background-color: #111111;
-    border-radius: 1px;
+    background-color: #9a0505;
+    border-radius: 2px;
+    margin-left: 1px;
 }
 
 .computerButton {
