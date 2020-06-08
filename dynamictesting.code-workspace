@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/wizard/Documents/onAir/Infinite Scroll/infinite-scroll/dist2"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "dist",
+		"liveServer.settings.port": 5502
+	}
+}

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onAir</title>
+</head>
+
+<body>
+   
+    <script>
+
+    </script>
+
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:100,400');
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            font-weight: thin;
+            /*
+            background-image: linear-gradient(90deg, #6d4094 0%, #0b0a0a 85%);
+            */
+            background-color: black;
+        }
+
+        a.button {
+            color: white;
+        }
+
+        body:after {
+            content: "";
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+
+
+
+            filter: blur(3px);
+        }
+
+        .movie-card {
+            position: relative;
+            box-sizing: border-box;
+            width: 50%;
+            max-width: 800px;
+            height: 300px;
+            background-position: center;
+            background-size: cover;
+            margin: 1px auto;
+            border-radius: 4px;
+            box-shadow: 12px 10px 12px rgba(0, 0, 0, .4);
+            color: white;
+            padding: 2vh 3%;
+        }
+
+        .movie-card:hover {
+            content: "";
+            display: block;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 540px;
+            border-radius: 3px;
+            background: linear-gradient(to right, rgba(40, 40, 60, 1) 0%, rgba(40, 0, 60, 0) 90%);
+            will-change: transform;
+            z-index: 0;
+        }
+
+        i {
+            font-size: .7em;
+            color: #ff5b84;
+        }
+
+        h1 {
+            font-size: 200%;
+            position: relative;
+            z-index: 10;
+        }
+
+        span {
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+            margin-right: 80px;
+            color: rgb(210, 210, 210);
+        }
+
+        .watch {
+            visibility: hidden;
+            display: block;
+            border: 1px solid rgb(252, 0, 0);
+            border-radius: 4px;
+            position: relative;
+            z-index: 10;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            background: rgba(223, 22, 22, 0.651);
+            margin: 10px 0px 0px 20px;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+            transition: all .2s;
+        }
+
+        button:hover {
+            background: rgba(188, 58, 58, 0.8);
+            color: black;
+            box-shadow: 0 0 10px rgba(255, 255, 255, .5);
+            mix-blend-mode: screen;
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+
+        p {
+            position: relative;
+            z-index: 10;
+            font-size: .8em;
+            width: 60%;
+            height: 35%;
+        }
+
+        p2 {
+            position: relative;
+            z-index: 10;
+            font-size: .9em;
+        }
+
+        p3 {
+            position: relative;
+            z-index: 10;
+            font-size: .6em;
+        }
+
+        @media (max-width: 768px) {
+
+
+            .movie-card {
+                width: 100%;
+                height: 200px;
+            }
+
+            h1 {
+                font-size: 150%;
+            }
+
+            p {
+                display: none;
+                /*     overflow: hidden;
+    width: 100%;
+    height: 30%; */
+            }
+
+            .watch {
+                margin: 4% auto;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .movie-card {
+                width: 100%;
+            }
+        }
+
+        .googlePlayImg {
+            height: 30px;
+            margin-left: 1em;
+            margin-top: 2.5em;
+        }
+
+        .appleStoreImg {
+            margin-left: 1em;
+            margin-top: 2.5em;
+            display: inline-block;
+            overflow: hidden;
+
+            height: 30px;
+        }
+
+        .howItWorkLink {
+            display: none;
+        }
+
+
+        @media screen and (max-width: 640px) {
+
+            .gameheader {
+                display: none !important;
+
+            }
+
+            .howItWorkLink {
+                display: inline-block;
+                float: right;
+                margin-right: 5px;
+                margin-top: 13px;
+            }
+
+            .googlePlayImg {
+                /*margin-top:1em;*/
+                display: none;
+            }
+
+            .appleStoreImg {
+                /*margin-top:1em;*/
+                display: none;
+            }
+
+            header {
+                height: 3.125em;
+            }
+
+            header #logo {
+                width: 40%;
+            }
+
+            footer {
+                width: 100%;
+                min-width: 100%;
+                padding: 1em 0;
+            }
+
+            footer span.center {
+                /*width: 30%;
+			height: auto;*/
+                margin: 0px auto 15px auto;
+            }
+
+            footer p.uc {
+                text-align: center;
+            }
+        }
+
+        @media screen and (min-width: 641px) and (max-width: 768px) {
+
+            #loggedin,
+            #account,
+            #primary-nav {
+                display: none !important;
+            }
+
+            .howItWorkLink {
+                display: inline-block;
+                float: right;
+                margin-right: 5px;
+                margin-top: 2em;
+            }
+
+            .googlePlayImg {
+                /*margin-top:1em;*/
+                display: none;
+            }
+
+            .appleStoreImg {
+                /*margin-top:1em;*/
+                display: none;
+            }
+
+            header {
+                height: 5.125em;
+            }
+
+            header #logo {
+                width: 40%;
+            }
+
+
+
+
+            footer {
+                width: 100%;
+                min-width: 100%;
+                padding: 1em 0;
+            }
+
+            footer span.center {
+                /*width: 30%;
+			height: auto;*/
+                margin: 0px auto 15px auto;
+            }
+
+            footer p.uc {
+                text-align: center;
+            }
+        }
+
+        .notification {
+            height: 14px;
+            -moz-border-radius: 36px;
+            border-radius: 36px;
+            width: 14px;
+            padding: 3px;
+            display: inline-block;
+            color: #fff;
+            text-shadow: 0px 1px 1px #707070;
+            font-weight: bold;
+            font-family: helvetica;
+            text-align: center;
+            font-size: 12px;
+            /*margin-left: -25px;*/
+            position: absolute;
+            margin-left: 25px;
+            margin-top: -25px;
+        }
+
+
+        .yellow {
+            background-color: red;
+            border: 1px solid red;
+        }
+
+        .badge {
+            box-sizing: border-box;
+            padding-top: .3em;
+            padding-right: .4em;
+            padding-left: .4em;
+            padding-bottom: .2em;
+            min-width: 1.5em;
+            min-height: 1em;
+            line-height: 1em;
+            display: inline-block;
+            color: white;
+            text-align: center;
+            background-color: red;
+            border-radius: 1em;
+            font-size: 0.75em;
+            float: right;
+            margin: 1em 0.5em 0 0;
+        }
+
+        #search {
+            position: fixed;
+          z-index: 10;
+  background-color:rgba(154, 154, 154, 0.215);
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  height: 25px;
+  color: white;
+  width: 125px;
+  margin-left: 63%;
+  margin-top: 4px;
+  border-radius: 10px;
+  
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: solid;
+  border-width: 2px;
+  border-color: rgb(255, 0, 0);
+}
+    </style>
+
+
+   
+
+    <div>
+        <input type="search" id="search">
+        <script type="text/javascript">
+
+
+
+            var articleDB = [
+
+                {
+                    title: "onAir",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "$10K Awards Are Expected To Be Given Twice Weekly",
+                    background: "url('/1onairheader.jpeg')",
+                    link: "/press/feb1120.html",
+                    avatar: "url('https://pbs.twimg.com/profile_banners/73549040/1588103872/1500x500')"
+                    
+                },
+
+                {
+                    title: "$Jimmy Dom",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "#00000000000000000021e800c1e8df51b22c1588e5a624bea17e9faa34b2dc4a",
+                    background: "url('https://pbs.twimg.com/profile_banners/73549040/1588103872/1500x500')",
+                    link: "",
+                    avatar: ""
+                },
+
+                {
+                    title: "Mark Wilcox",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('https://pbs.twimg.com/profile_banners/8720422/1586497872/1500x500')",
+                    link: "",
+                    avatar: ""
+                },
+
+
+                {
+                    title: "Orson Whales",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('https://pbs.twimg.com/profile_banners/866161680790769665/1571366703/1500x500')",
+                    link: "",
+                    avatar: ""
+                },
+
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+                {
+                    title: "$n/a",
+                    author: "",
+                    date: "",
+                    hasWatched: false,
+                    synopsis: "lorem ipsumslsljfdsljaslkgd",
+                    background: "url('')",
+                    link: ""
+                },
+            ];
+
+           
+
+           
+
+
+            articleDB.forEach(createCard);
+
+
+            function createCard(element, i) {
+                // card
+                var card = document.createElement('div');
+                card.setAttribute("class", "movie-card");
+                card.style.backgroundImage = element.background;
+
+                // title
+                var title = document.createElement('h1');
+                title.innerText = element.title;
+                card.appendChild(title)
+
+                // synopsis
+                var synopsis = document.createElement('p');
+                synopsis.innerText = element.synopsis;
+                card.appendChild(synopsis);
+
+                // Avatar
+                var avatar = document.createElement('div')
+                avatar.setAttribute("class","avatar");
+                avatar.innerHTML = "<img src=" + element.avatar + ">";
+                card.appendChild(avatar);
+                
+
+                // Author
+                var author = document.createElement('p2');
+                author.innerText = element.author;
+                card.appendChild(author);
+
+                // Date
+                var date = document.createElement('p3');
+                date.innerText = element.date;
+                date.innerHTML = '<br>' + element.date + '</br>';
+                card.appendChild(date);
+
+
+                // read/read again
+          
+                var watch = document.createElement('button');
+                watch.setAttribute("class", "watch");
+                watch.innerText = "Broadcast";
+                watch.innerHTML = '<a class="button" href=' + element.link + '>BROADCAST</a>';
+                card.appendChild(watch);
+                document.body.appendChild(card);
+
+             
+
+            }
+
+
+        </script>
+
+    </div>
+
+
+
+    <section>
+    </section>
+    <!-- footer -->
+    
+    </div>
+</body>
+
+</html>
